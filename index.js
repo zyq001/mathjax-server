@@ -6,31 +6,36 @@ function startMathJax(){
     var mjAPI = require("mathjax-node/lib/mj-page.js");
     mjAPI.config({
         MathJax: {
+
+
+            jax: ["input/TeX","input/MathML", "output/SVG"],
+            extensions: ["tex2jax.js","mml2jax.js"],
             SVG: {
                 // linebreaks: { automatic: true },
-                scale: 85,
+                scale: 80,
                 font: "TeX"
             },
-//             tex2jax: {
-//                 preview: ["[math]"],
-//                 processEscapes: true,
-//                 processClass: ['math'],
-// //                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-// //                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-//                 skipTags: ["script","noscript","style","textarea","pre","code"]
-//             },
-//             TeX: {
-//                 noUndefined: {disabled: true},
-//                 Macros: {
-//                   mbox: ['{\\text{#1}}',1],
-//                   mb: ['{\\mathbf{#1}}',1],
-//                   mc: ['{\\mathcal{#1}}',1],
-//                   mi: ['{\\mathit{#1}}',1],
-//                   mr: ['{\\mathrm{#1}}',1],
-//                   ms: ['{\\mathsf{#1}}',1],
-//                   mt: ['{\\mathtt{#1}}',1]
-//                 }
-//             }
+            tex2jax: {
+                // preview: ["[math]"],
+                // processEscapes: true,
+                // processClass: ['math'],
+               // inlineMath: [ ['$','$'], ["\\(","\\)"] ]
+//                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                skipTags: ["script","noscript","style","textarea","pre","code"]
+            },
+            TeX: {
+                noUndefined: {disabled: true},
+                extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+                Macros: {
+                  mbox: ['{\\text{#1}}',1],
+                  mb: ['{\\mathbf{#1}}',1],
+                  mc: ['{\\mathcal{#1}}',1],
+                  mi: ['{\\mathit{#1}}',1],
+                  mr: ['{\\mathrm{#1}}',1],
+                  ms: ['{\\mathsf{#1}}',1],
+                  mt: ['{\\mathtt{#1}}',1]
+                }
+            }
         }
     });
     mjAPI.start();
