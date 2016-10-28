@@ -7,13 +7,28 @@ function startMathJax(){
     mjAPI.config({
         MathJax: {
 
+            imageFont: null,
+
+
+            styles:{
+
+                ".MathJax_SVG_Display": {
+                    "text-align": "left"
+                }
+            },
 
             jax: ["input/TeX","input/MathML", "output/SVG"],
-            extensions: ["tex2jax.js","mml2jax.js"],
+            extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathZoom.js"],
             SVG: {
                 // linebreaks: { automatic: true },
-                scale: 80,
-                font: "TeX"
+                scale: 75,
+                font: "TeX",
+                styles:{
+
+                    ".MathJax_SVG_Display": {
+                        "text-align": "left"
+                    }
+                }
             },
             tex2jax: {
                 // preview: ["[math]"],
